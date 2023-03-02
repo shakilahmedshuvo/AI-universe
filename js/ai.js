@@ -14,11 +14,14 @@ const displayDatas = datas => {
         dataDiv.classList.add('col');
         dataDiv.innerHTML = `
         <div class="card">
-            <img src="" class="card-img-top" alt="">
+            <img src="${data.image}" class="card-img-top" alt="">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title fw-bolder mb-3">Features</h5>
+                <p class="card-text mb-0 fs-6 fw-lighter text-secondary ">1. ${data.features[0]}</p>
+                <p class="card-text mb-0 fs-6 fw-lighter text-secondary ">2. ${data.features[1]}</p>
+                <p class="card-text mb-0 fs-6 fw-lighter text-secondary ">3. ${data.features[2]}</p>
+                <hr>
+                <h5 class="card-title fw-bolder mb-3">${data.name}</h5>
             </div>
         </div>
         `;
