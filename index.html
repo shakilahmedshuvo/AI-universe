@@ -27,7 +27,7 @@
     </header>
     <!-- header section end -->
     <!-- main section start -->
-    <main class="container mt-5">
+    <main class="container mt-5 pb-4">
         <!-- card section start -->
         <section>
             <div id="datas-container" class="row row-cols-1 row-cols-md-3 g-4">
@@ -37,7 +37,7 @@
         </section>
         <!-- card section end -->
         <!-- loading data spinner section start -->
-        <section id="loader" class="d-none">
+        <section id="loader">
             <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
                 <div class="spinner-border text-danger" role="status">
                     <span class="visually-hidden">Loading...</span>
@@ -46,10 +46,43 @@
         </section>
         <!-- loading data spinner section end -->
         <!-- see more btn section start -->
-        <div id="show-all" class="text-center mt-4 mb-3 d-none">
-            <div class="btn btn-danger py-3 px-4 rounded-4 mt-4">See More</div>
-        </div>
+        <section>
+            <div id="show-all" class="text-center mt-4 mb-3 d-none">
+                <div id="btn-show-all" class="btn btn-danger py-3 px-4 rounded-4 mt-4">See More</div>
+            </div>
+        </section>
         <!-- see more btn section end -->
+        <!-- modal section start -->
+        <section>
+            <!--  -->
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                <span class="text-white"></span>
+                            </button>
+                        </div>
+                        <div id="modalBody" class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+        </section>
+        <!-- modal section end -->
     </main>
     <!-- main section end -->
 
