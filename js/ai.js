@@ -14,8 +14,8 @@ const displayDatas = datas => {
     datasContainer.textContent = '';
     // 6 data show section
     const showAll = document.getElementById('show-all');
-    if (datas.length > 9) {
-        datas = datas.slice(0, 6);
+    if (datas.length > 12) {
+        datas = datas.slice(0, 12);
         showAll.classList.remove('d-none');
     }
     else {
@@ -38,8 +38,9 @@ const displayDatas = datas => {
         <h5 class="card-title fw-bolder mb-3">${data.name}</h5>
         <p class="card-text mb-0 fs-6 fw-lighter text-secondary"><i class="fa-regular fa-calendar-days"></i> ${data.published_in}</p>
         </div>
-        <!-- card btn -->
-        <button class="btn btn-outline-danger rounded-circle h-100 my-auto"><i class="fa-solid fa-arrow-right"></i></button>
+        <div class="d-flex flex-column-reverse">
+        </div>
+        <button class="btn btn-outline-danger rounded-circle h-100 my-auto" onclick="modalBtn('${data.id}')" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
         </div>
         </div>
@@ -55,33 +56,23 @@ const toggleSpinner = isLoading => {
     const loaderSection = document.getElementById('loader');
     if (isLoading) {
         loaderSection.classList.remove('d-none')
-        // hideShowMoreBtn.classList.add('d-none');
     }
     else {
         loaderSection.classList.add('d-none');
-        // hideShowMoreBtn.classList.remove('d-none');
     }
 }
 
-// spinner show (see more btn hide)
-// const hideShowMoreBtn = document.getElementById('show-all');
 
-// See More section
-// document.getElementById('btn-show-all').addEventListener('click', function () {
-//     const loadDataAll = loadData();
-//     console.log(loadData)
-// })
+// call the function
+
+const modalBtn = async id => {
+    const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`
+    const res = await fetch(url);
+    const data = await res.json();
+    showModalDetailesInfo(data)
+}
+
 
 
 // call the function
 loadData();
-
-// const showAllDataTogether = () => {
-//     const url = `https://openapi.programming-hero.com/api/ai/tools`
-//     fetch(url)
-//         .then((res) => res.json())
-//         .then((data) => {
-//             allData = data;
-//             showAllData(data)
-//         })
-// }
