@@ -2,3 +2,23 @@
 * {
     font-family: 'Work Sans', sans-serif;
 }
+
+.modal-dialog {
+    align-items: center;
+
+}
+
+.btn-close {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    right: -10px;
+    top: -25px;
+}
+
+#bedge {
+    position: absolute;
+    right: 33px;
+    left: 40px;
+}
