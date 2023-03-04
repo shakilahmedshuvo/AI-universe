@@ -5,7 +5,7 @@ const loadData = async () => {
     const url = `https://openapi.programming-hero.com/api/ai/tools`
     const res = await fetch(url);
     const data = await res.json();
-    displayDatas(data.data.tools.slice(0,6))
+    displayDatas(data.data.tools.slice(0, 6))
 }
 
 // const display data
@@ -62,7 +62,6 @@ const toggleSpinner = isLoading => {
     }
 }
 
-
 // call the function
 
 const modalBtn = async id => {
@@ -80,7 +79,7 @@ const showModalDetailesInfo = showClickDetails => {
                                <h3 class="p-2">${showClickDetails.data.description}</h3>
                                 <div class="d-flex justify-content-center mt-4 gap-2">
                                <div  class="w-50 d-flex bg-light-subtle  text-warning-emphasis align-items-center text-center fw-semibold p-2 rounded">${showClickDetails.data.pricing ? showClickDetails.data.pricing[0].price + " " + showClickDetails.data.pricing[0].plan : "Free Of cost basic"}</div>
-                               <div class="w-50 bg-light-subtle text-center d-flex align-items-center  text-danger  fw-semibold p-2 rounded">${showClickDetails.data.pricing ? showClickDetails.data.pricing[1].price + " " + showClickDetails.data.pricing[1].plan : "Free Of cost basic"}</div>
+                               <div class="w-50 bg-light-subtle text-center d-flex align-items-center text-danger fw-semibold p-2 rounded">${showClickDetails.data.pricing ? showClickDetails.data.pricing[1].price + " " + showClickDetails.data.pricing[1].plan : "Free Of cost basic"}</div>
                                <div class="w-50 text-center bg-light-subtle text-success fw-semibold rounded">${showClickDetails.data.pricing ? showClickDetails.data.pricing[2].price + " " + showClickDetails.data.pricing[2].plan : "Free Of cost basic"}</div>
                                
                            </div>
