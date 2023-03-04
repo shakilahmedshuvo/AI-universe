@@ -5,7 +5,7 @@ const loadData = async () => {
     const url = `https://openapi.programming-hero.com/api/ai/tools`
     const res = await fetch(url);
     const data = await res.json();
-    displayDatas(data.data.tools);
+    displayDatas(data.data.tools.slice(0,6))
 }
 
 // const display data
@@ -16,10 +16,10 @@ const displayDatas = datas => {
     const showAll = document.getElementById('show-all');
     if (datas.length > 12) {
         datas = datas.slice(0, 12);
-        showAll.classList.remove('d-none');
+        showAll.classList.add('d-none');
     }
     else {
-        showAll.classList.add('d-none')
+        showAll.classList.remove('d-none')
     }
     datas.forEach(data => {
         const dataDiv = document.createElement('div');
@@ -112,9 +112,14 @@ const showModalDetailesInfo = showClickDetails => {
                          </div>
                          </div>
                             `;
-
 }
-
 
 // call the function
 loadData();
+// Show ALl button:
+const btnShowMore = async () => {
+    const url = `https://openapi.programming-hero.com/api/ai/tools`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayDatas(data.data.tools)
+}
